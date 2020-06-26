@@ -1,0 +1,99 @@
+.reviews {
+    grid-column: 3/13;
+    padding: 10rem 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, minmax(20rem, min-content));
+    grid-gap: 1.5rem;
+
+    @media only screen and (max-width: 37.5em) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.client-box {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    background-color: $primary-color;
+    background-image: url('../img/png/clients-pizza.png');
+    background-repeat: no-repeat;
+    background-position: 130% 50%;
+
+    @media only screen and (max-width: 46.875em) {
+        background-position: 180% 50%;
+    }
+    
+    @media only screen and (max-width: 37.5em) {
+        // background-image: none;
+    }
+
+    h2 {
+        // font-weight: 100;
+        text-transform: capitalize;
+        color: $white;
+        font-size: 3.5rem;
+        letter-spacing: -1px;
+        margin-top: 10rem;
+        margin-left: 3rem;
+
+        @media only screen and (max-width: 37.5em) {
+            margin-bottom: 4rem;
+        }
+    }
+}
+
+.review-box {
+    background-color: lighten($black, 97%);
+    color: $gray;
+    padding: 3rem;
+
+    @media only screen and (max-width: 37.5em) {
+        margin-top: 2rem;
+    }
+
+    &--1 {
+        grid-column: 3/5;
+        grid-row: 1/2;
+    }
+    &--2 {
+        grid-column: 1/4;
+        grid-row: 2/3;
+    }
+    &--3 {
+        grid-column: 4/5;
+        grid-row: 2/3;
+    }
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-profile {
+    display: flex;
+    margin-top: 3rem;
+
+    img {
+        border: 4px solid $secondary-color;
+    }
+
+    .username {
+        align-self: center;
+        padding: .5rem;
+        background-color: $secondary-color;
+        color: $black;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        h6 {
+            font-size: .85rem;
+        }
+        p {
+            font-size: .65rem;
+        }
+    }
+}
+
+

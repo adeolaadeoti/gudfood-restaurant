@@ -1,0 +1,205 @@
+/*--------------------------
+    variables
+---------------------------*/
+//fonts
+// @font-face {
+//     font-family: 'Sailec-Medium';
+//     src: url('../font/Sailec-Medium.eot');
+//     src: url('../font/Sailec-Medium.eot?#iefix') format('embedded-opentype'),
+//         url('../font/Sailec-Medium.woff2') format('woff2'),
+//         url('../font/Sailec-Medium.woff') format('woff'),
+//         url('../font/Sailec-Medium.ttf') format('truetype'),
+//         url('../font/Sailec-Medium.svg#Sailec-Medium') format('svg');
+//     font-weight: 500;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+@font-face {
+    font-family: 'Sailec-Bold';
+    src: url('../font/Sailec-Bold.eot');
+    src: url('../font/Sailec-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../font/Sailec-Bold.woff2') format('woff2'),
+        url('../font/Sailec-Bold.woff') format('woff'),
+        url('../font/Sailec-Bold.ttf') format('truetype'),
+        url('../font/Sailec-Bold.svg#Sailec-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sailec-Regular';
+    src: url('../font/Sailec-Regular.eot');
+    src: url('../font/Sailec-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../font/Sailec-Regular.woff2') format('woff2'),
+        url('../font/Sailec-Regular.woff') format('woff'),
+        url('../font/Sailec-Regular.ttf') format('truetype'),
+        url('../font/Sailec-Regular.svg#Sailec-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+$primary-font: 'Sailec-Regular', sans-serif;
+$secondary-font: 'Sailec-Bold', sans-serif;
+
+//colors
+$primary-color: #E31B0E;
+$secondary-color: #FFD800;
+$white: #FFFFFF;
+$black: #000000;
+$gray: #696969;
+
+
+
+
+
+/*--------------------------
+    base settings
+---------------------------*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 10px
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    transition: font-size .2s ease;
+    
+    @media only screen and (max-width: 62.5em) { // tab-land
+        font-size: 56.25%; // 9px
+    }
+    
+    @media only screen and (max-width: 56.25em) { // tab-port
+        font-size: 50%; // 8px
+    }
+
+    @media only screen and (max-width: 37.5em) { // phone
+        font-size: 46.87%; // 7.5px 
+    }
+    
+    @media only screen and (min-width: 112.5em) { // big desktop
+        font-size: 75%; // 1rem = 12px, 12/16 = 75
+    }
+    
+}
+
+body {
+    font-family: $primary-font;
+    font-size: 1.6rem;
+    background-color: #fff;
+    color: $black;
+    position: relative;
+}
+
+button {
+    &:focus {
+        outline: none;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(min-content, 10rem)) 1fr;
+    grid-template-rows: repeat(7, min-content);
+}
+
+
+
+
+/*--------------------------
+    typography
+---------------------------*/
+.heading-2 {
+    text-transform: capitalize;
+    color: $black;
+    font-size: 3.5rem;
+    letter-spacing: -1px;
+    margin-bottom: 2rem;
+
+    &--sub {
+        color: $white;
+    }
+}
+
+.heading-3 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1.4px;
+
+    &--sub {
+        color: $white;
+    }
+}
+
+.heading-5 {
+    font-size: 1.1rem;
+}
+
+.paragraph {
+    font-size: 1.4rem;
+
+    &--sub {
+        color: white;
+    }
+}
+
+.bigFont {
+    font-size: 5rem;
+    line-height: 54px;
+}
+
+
+
+
+
+/*--------------------------
+    mixins
+---------------------------*/
+// MEDIA QUERY MANAGER 
+/*
+0 - 600px:          Phone
+600px - 900px:      Tablet portrait
+900px - 1200px:     Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :     Big desktop
+
+ORDER FOR WRITTING MEDIA QUERY, 
+        BASE > TYPOGRAPHY > SECTION > GRID > PAGE LAYOUT > COMPONENTS
+
+*/
+ 
+// @mixin respond($breakpoint) {
+//     // @if $breakpoint == small-phone {
+//     //     @media (max-width: 20.75em) { @content };  // 600/16 = 37.5em
+//     // }
+
+//     @if $breakpoint == phone {
+//         @media only screen and (max-width: 37.5em) { @content };  // 600/16 = 37.5em
+//     }
+
+//     @if $breakpoint == tab-port {
+//         @media only screen and (max-width: 56.25em) { @content };  
+//     }
+
+//     @if $breakpoint == tab-land {
+//         @media only screen and (max-width: 75em) { @content };  
+//     }
+
+//     @if $breakpoint == big-desktop {
+//         @media only screen and (min-width: 112.5em) { @content };  
+//     }
+// }

@@ -1,0 +1,56 @@
+.chefs {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(min-content, 10rem)) 1fr;
+    padding: 10rem 3rem;
+    color: $black;
+    background-image: url('../img/SVG/chef-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__wrapper {
+        grid-column: 2/14;
+    }
+}
+
+.chefs-box {
+    margin-top: 6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    // grid-template-rows: 20rem;
+    grid-gap: 4rem;
+    align-items: center;
+}
+
+.chefs-card {
+    background-image: linear-gradient(to right, $secondary-color, 0%, $secondary-color, 85%, transparent 85%);
+    padding: 2rem;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        img {
+            object-fit: cover;
+            min-height: 40rem;
+            min-width: 30rem;
+        }
+    }
+
+    &__title {
+        padding: 1rem;
+        background-color: $white;
+        border-left: 7px solid $primary-color;
+        padding-left: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        h5 {
+
+        }
+        p {
+            font-size: 1rem;
+            color: $gray;
+            font-family: $secondary-font;
+        }
+    }
+}

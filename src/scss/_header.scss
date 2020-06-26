@@ -1,0 +1,253 @@
+header {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(min-content, 10rem)) 1fr;
+    background-image: url('../img/SVG/yellow-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $secondary-color;
+    background-position: top;
+    min-height: 65rem;
+    padding: 3rem;
+    position: relative;
+    overflow-x: hidden;
+    // opacity: 0;
+
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 50%;
+        width: 100%;
+        background-image: url('../img/SVG/red-bg.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $primary-color;
+        background-position: bottom;
+    }
+
+    // subgrid for the header children
+    .header {
+        grid-column: 2/14;
+        position: relative;
+        z-index: 3;
+    }
+}
+
+
+.nav {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 46.875em) {
+        width: 100%;
+    }
+
+    &__list {
+        list-style: none;
+        @media only screen and (max-width: 46.875em) {
+            display: none;
+        }
+    }
+    &__link {
+        text-decoration: none;
+        color: $black;
+        text-transform: capitalize;
+        transition: all .1s ease;
+        font-size: 1.4rem;
+
+        &:hover {
+            padding-bottom: 5px;
+            border-bottom: $primary-color solid 3px;
+        }
+    }
+    
+}
+
+.brand__logo {
+    width: 15rem;
+    height: 3rem;
+}
+
+.burger {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .2s ease;
+
+    @media only screen and (max-width: 46.875em) {
+        transform: translate(-10%, -45%);
+    }
+
+    &__img {
+        height: 52rem;
+    }
+}
+
+.hero-text {
+    margin-top: 8rem;
+    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    span {
+        text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+    h1 {
+        text-transform: capitalize;
+        font-size: 6rem;
+        // font-weight: 100;
+        letter-spacing: -3px;
+        line-height: 6rem;
+        margin-top: 2rem;
+    }
+    
+    
+}
+
+.sauce {
+    width: 20rem;
+    position: absolute;
+    top: 20%;
+    right: 4%;
+
+    @media only screen and (max-width: 46.875em) {
+        display: none; 
+    }
+}
+
+.discount {
+    // font-weight: 100;
+    color: $white;
+    font-size: 4rem;
+    
+    span {
+        display: block;
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+}
+
+.cta {
+    margin-top: 7rem;
+    background-color: $secondary-color;
+    border: none;
+    outline: none;
+    padding: 2rem 3rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: $secondary-font;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover {
+        padding-left: 4rem;
+        transform: scale(1.1);
+    }
+}
+
+.copy {
+    position: absolute;
+    right: 5%;
+    bottom: 6%;
+    color: $white;
+    padding: 2rem;
+    border-left: $secondary-color solid 3px;
+
+    h4 {
+        margin-top: 1rem;
+    }
+
+    @media only screen and (max-width: 46.875em) {
+        display: none; 
+    }
+}
+
+
+// animationa
+@keyframes jumping {
+    from {
+        top: 55%;
+    }
+    to {
+        top: 49%;
+    }
+}
+
+.jump {
+    animation: jumping 2s infinite alternate ease-in-out;
+}
+
+
+
+// mobile nav
+.mobile-nav {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 5;
+
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: flex-start;
+    
+    .hamburger {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        position: absolute;
+        right: 4%;
+        top: .3%;
+    }
+
+    .links-nav {
+        background-color: $secondary-color;
+        padding: 4rem;
+        transform: translateY(-100%);
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        z-index: -4;
+        transition: all 1s ease;
+
+        li {
+            list-style: none;
+            padding: 3rem;
+        }
+        a {
+            text-decoration: none;
+            color: $black;
+            text-transform: capitalize;
+            transition: all .1s ease;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            &:hover {
+                padding-bottom: 5px;
+                border-bottom: $primary-color solid 3px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 46.875em) {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.openNav .links-nav {
+    transform: translateY(0%);
+}

@@ -1,0 +1,58 @@
+.contact {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(min-content, 15rem)) 1fr;
+    padding: 10rem 3rem;
+    color: $black;
+    background-image: url('../img/SVG/dishes-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+
+    &__wrapper {
+        grid-column: 2/14;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        grid-gap: 4rem;
+        align-items: center;
+        justify-items: left;
+        // padding: 2rem;
+    }
+}
+
+.newsletter {
+    
+}
+
+.mail {
+
+    position: relative;
+    &__box {
+        background-image: linear-gradient(to right, $primary-color, 0%, $primary-color, 80%, transparent 80%);
+        padding: 3rem;
+        padding-bottom: 5rem;
+    }
+
+    .email {
+        input {
+            width: 40rem;
+            padding: 3rem 3rem 6rem 3rem;
+            border: none;
+            outline: none;
+            &::placeholder {
+                border-bottom: 1px solid $black;
+                padding-bottom: 1rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    button {
+        @extend .cta;
+        margin-top: 0rem;
+
+        position: absolute;
+        bottom: 10%;
+        left: 13%;
+    }
+}

@@ -1,0 +1,28 @@
+.dinning {
+    grid-column: 3/13;
+    padding: 10rem 3rem;
+    background-color: #fff;
+    color: $gray;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap: 4rem;
+    align-items: center;
+
+    &__img {
+        width: 80%;
+        justify-self: left;
+    }
+
+    &__content {
+        justify-self: left;
+    }
+
+    @media only screen and (max-width: 37.5em) { // phone
+        h2 {
+            br {
+                display: none;
+            }
+        }
+    }
+}

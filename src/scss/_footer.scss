@@ -1,0 +1,41 @@
+.footer {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(min-content, 15rem)) 1fr;
+    padding: 10rem 3rem;
+    background-color: $primary-color;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &__wrapper {
+        grid-column: 2/14;
+        // padding: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-gap: 4rem;
+        align-items: top;
+        justify-content: center;
+    }
+
+    h3 {
+        color: $secondary-color;
+    }
+
+}
+
+.about-brand {
+
+    .logo {
+        width: 10rem;
+        filter: invert(1);
+        margin-bottom: 2rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        width: 80%;
+    }
+}

@@ -1,0 +1,86 @@
+.dishes {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(min-content, 10rem)) 1fr;
+    padding: 10rem 3rem;
+    color: $black;
+    background-image: url('../img/SVG/dishes-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+
+    &__wrapper {
+        grid-column: 2/14;
+    }
+}
+
+.dishes__box {
+    display: flex;
+}
+
+.dishes-card {
+    margin-top: 4rem;
+    background-color: $white;
+    padding: 2rem 0 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    border-left: $primary-color solid 4px;
+
+    &:not(:last-child) {
+        margin-right: 4rem;
+    }
+
+    &__heading {
+        margin-bottom: 3rem;
+        // font-weight: 100;
+        font-size: 2.5rem;
+        letter-spacing: -1px;
+        text-transform: capitalize;
+    }
+
+    &__img {
+        height: 20rem;
+        width: 22rem;
+        object-fit: cover;
+        align-self: flex-end;
+        margin-bottom: 1rem;
+    }
+
+    &__tag {
+        text-transform: uppercase;
+        font-size: .85rem;
+        color: $gray;
+        letter-spacing: 2px;
+    }
+
+    &__cta {
+        display: flex;
+        margin-top: 3rem;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            background-color: $secondary-color;
+            border: none;
+            outline: none;
+            padding: 1rem 1.5rem;
+            text-transform: uppercase;
+            font-size: .75rem;
+            font-family: $secondary-font;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all .3s ease;
+
+            &:hover {
+                padding-left: 2rem;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__price {
+        color: $gray;
+
+    }
+
+}
